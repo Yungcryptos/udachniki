@@ -73,6 +73,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"Привет, {user.first_name}! 👋\n\n"
         f"Добро пожаловать в наше казино! 🎰\n"
         f"Твой стартовый бонус: {config.REGISTRATION_BONUS} Stars! ⭐\n\n"
+        f"💎 <b>Приведи друга и получи 100 Stars!</b>\n"
+        f"Просто отправь ему эту ссылку:\n"
+        f"https://t.me/ВашБот?start=ref_{user.id}\n\n"
         f"<b>Доступные команды:</b>\n"
         f"/game - 🎲 Сыграть в кости\n"
         f"/balance - 💰 Мой баланс\n"
@@ -80,8 +83,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"/buy - 💵 Купить еще Stars\n\n"
         f"<i>Удачи! Пусть фортуна будет на твоей стороне!</i> 🍀"
     )
-    
-    await update.message.reply_html(welcome_text)
 
 async def balance(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Обработчик команды /balance. Показывает текущий баланс."""
